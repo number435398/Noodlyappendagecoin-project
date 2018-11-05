@@ -1155,9 +1155,9 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 //    nSubsidy >>= halvings;
 //    return nSubsidy;
 //}
-static const u_int64 TOTAL_GENERATION = MAX_MONEY;
+static const uint64_t TOTAL_GENERATION = MAX_MONEY;
 static const double FSM_FUNDS = 0.03;
-u_int64 nSubsidy = 10000 * COIN;
+uint64_t nSubsidy = 10000 * COIN;
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
