@@ -3,7 +3,7 @@ Noodlyappendagecoin Core integration/staging tree
 
 Build v0.16.3.0
 
-https://noodlyappendagecoin.org
+https://www.noodlyappendagecoin.net
 
 Current Status (as of 11/4/2018):
 ---------------
