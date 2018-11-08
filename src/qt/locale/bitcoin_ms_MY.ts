@@ -352,7 +352,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     <message>
         <source>&amp;Debug window</source>
-        <translation>Tetingkap windows</translation>
+        <translation>Tetingkap Debug</translation>
     </message>
     <message>
         <source>Open debugging and diagnostic console</source>
@@ -392,7 +392,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     <message>
         <source>Sign messages with your Noodlyappendagecoin addresses to prove you own them</source>
-        <translation>sahkan mesej bersama alamat noodlyappendagecoin anda untuk menunjukkan alamat ini anda punya</translation>
+        <translation>Log mesej dengan alamat Noodlyappendagecoin anda untuk membuktikan anda memilikinya</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Noodlyappendagecoin addresses</source>
@@ -437,10 +437,6 @@ Alihkan fail data ke dalam tab semasa</translation>
     </context>
 <context>
     <name>Intro</name>
-    <message>
-        <source>Noodlyappendagecoin</source>
-        <translation>Noodlyappendagecoin</translation>
-    </message>
     </context>
 <context>
     <name>ModalOverlay</name>

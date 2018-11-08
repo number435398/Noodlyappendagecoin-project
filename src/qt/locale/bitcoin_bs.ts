@@ -32,10 +32,6 @@
     </context>
 <context>
     <name>Intro</name>
-    <message>
-        <source>Noodlyappendagecoin</source>
-        <translation>Noodlyappendagecoin</translation>
-    </message>
     </context>
 <context>
     <name>ModalOverlay</name>
