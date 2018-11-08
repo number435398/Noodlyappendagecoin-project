@@ -1,9 +1,13 @@
 Noodlyappendagecoin Core integration/staging tree
 =====================================
 
-Build v0.16.3.0
+Build v0.15.1.0
 
 https://www.noodlyappendagecoin.net
+
+Current Status (as of 11/8/2018):
+---------------
+I shifted the litecoin fork from v 15 as opposed to v.16.3 and it looks like everything is working properly!  Just remember to backup your wallet.dat file.
 
 Current Status (as of 11/4/2018):
 ---------------
