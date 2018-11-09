@@ -1046,7 +1046,7 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     if(nHeight == 1)
     {
-	nSubsidy = TOTAL_GENERATION * FSM_FUNDS;
+	    nSubsidy = TOTAL_GENERATION * FSM_FUNDS;
 //	return nSubsidy + nFees;
         return nSubsidy;
     }
