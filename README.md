@@ -9,6 +9,8 @@ Current Status (as of 11/8/2018):
 ---------------
 I shifted the litecoin fork from v 15 as opposed to v.16.3 and it looks like everything is working properly!  Just remember to backup your wallet.dat file.
 
+If you want to compile this yourself, read the build files in the doc folder.
+
 Current Status (as of 11/4/2018):
 ---------------
 This is a BETA version of the proprosed new wallet.  It currently does not keep proper track of any addresses it creates.  Old wallet.dat files and their related addresses seem to work fine.  This wallet does not have a built in miner and does not support stratum; you must use longpolling instead to mine.  If you mine to an address created within this wallet, it will not show up in the wallet at this time, but it still appears to keep proper track on the network of that mining to the address.  Unless you're testing, I'd advise you do NOT mine to an address created by this wallet at this time.
