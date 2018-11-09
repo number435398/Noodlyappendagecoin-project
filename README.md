@@ -9,7 +9,7 @@ Current Status (as of 11/8/2018):
 ---------------
 I shifted the litecoin fork from v 15 as opposed to v.16.3 and it looks like everything is working properly!  Just remember to backup your wallet.dat file.
 
-If you want to compile this yourself, read the build files in the doc folder.
+If you want to compile this yourself, read the build files instructions in the doc folder.
 
 Current Status (as of 11/4/2018):
 ---------------
