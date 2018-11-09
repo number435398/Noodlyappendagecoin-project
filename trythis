@@ -1,0 +1,11 @@
+cd depends
+PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
+sudo apt get libevent
+sudo chmod +x config.guess
+sudo chmod +x config.site.in
+sudo chmod +x config.sub
+sudo make -j4 HOST=x86_64-w64-mingw32
+cd ..
+./autogen.sh
+CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
+make
