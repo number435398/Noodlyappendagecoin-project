@@ -142,10 +142,10 @@ public:
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb6;
         pchMessageStart[3] = 0xdb;
-        //pchMessageStart[0] = 0xfe;
-        //pchMessageStart[1] = 0xe7;
-        //pchMessageStart[2] = 0x39;
-        //pchMessageStart[3] = 0x2e;
+        //pchMessageStart[0] = 0x4e;
+        //pchMessageStart[1] = 0x44;
+        //pchMessageStart[2] = 0x4c;
+        //pchMessageStart[3] = 0x59;
         nDefaultPort = 40021;
         nPruneAfterHeight = 10000000;
         //nDefaultPort = 9333;
