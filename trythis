@@ -1,3 +1,8 @@
+sudo chmod +x autogen.sh
+sudo chmod +x configure.ac
+cd share
+sudo chmod +x genbuild.sh
+cd ..
 cd depends
 PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
 sudo apt get libevent

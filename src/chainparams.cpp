@@ -11,6 +11,7 @@
 #include "utilstrencodings.h"
 
 #include <assert.h>
+#include <ctime>
 
 #include "chainparamsseeds.h"
 
@@ -96,18 +97,16 @@ public:
         //consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         //consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
         consensus.nSubsidyHalvingInterval = 525600;
-        //consensus.BIP16Height = 1365000;
-        consensus.BIP34Height = 1365000;
-
-        consensus.BIP65Height = 1365000;
-        consensus.BIP66Height = 1365000;
+        consensus.BIP34Height = 1467000;
+        consensus.BIP65Height = 1468000;
+        consensus.BIP66Height = 1469000;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 60 * 60; // 1 hour
         consensus.nPowTargetSpacing = 60; // 1 minute        
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064
-        consensus.nMinerConfirmationWindow = 8064; // nPowTargetTimespan / nPowTargetSpacing * 4
+        consensus.nRuleChangeActivationThreshold = 1000; // 75% of 8064
+        consensus.nMinerConfirmationWindow = 2000; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -116,14 +115,14 @@ public:
         //consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1485561600; // January 28, 2017
         //consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1517356801; // January 31st, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1542844800; // November 22, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1549584060; // Feb 8th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1574380800; // November 22, 2019
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         //consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
         //consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1485561600; // January 28, 2017
         //consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1542844800; // November 22, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1549929660; // Feb 12th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1574380800; // November 22, 2019
         // The best chain should have at least this much work.
         //consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000c1bfe2bbe614f41260");
@@ -138,14 +137,20 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
-        //pchMessageStart[0] = 0x4e;
-        //pchMessageStart[1] = 0x44;
-        //pchMessageStart[2] = 0x4c;
-        //pchMessageStart[3] = 0x59;
+        std::time_t current_time = std::time(nullptr);
+        // If wallet is opened after February 1st, 12:01am, then use new pchMessageStart which is NDLY, otherwise use old code
+        if (current_time <= 1548979260){
+            pchMessageStart[0] = 0xfb;
+            pchMessageStart[1] = 0xc0;
+            pchMessageStart[2] = 0xb6;
+            pchMessageStart[3] = 0xdb;
+        }
+        if (current_time > 1548979260){
+            pchMessageStart[0] = 0x4e;
+            pchMessageStart[1] = 0x44;
+            pchMessageStart[2] = 0x4c;
+            pchMessageStart[3] = 0x59;
+        }
         nDefaultPort = 40021;
         nPruneAfterHeight = 10000000;
         //nDefaultPort = 9333;
@@ -199,16 +204,17 @@ public:
                   {  1000000, uint256S("0x2cb2445942259693d925e4b3d26a1578ea55de44778c1e2c2d804453d0306086")},
                   {  1250000, uint256S("0x240b79cb23054b2e95c9ec1d5ba0bfe5b6cba4f65083278ce404f5aaa9bc24d7")},
                   {  1300000, uint256S("0xd28dd9b4ae980c409440dfbd2d743696a88901dfc3520d70e8d69cb0416053ba")},
+                  {  1350000, uint256S("0x6d44c29e3f488a6df6b4b59ba0c8232352b53b0fd29c165c2c09b5375df99d94")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011 (height 1353397).
             //1516406833, // * UNIX timestamp of last known number of transactions
-            1538619046, // * UNIX timestamp of last known number of transactions
+            1541853835, // * UNIX timestamp of last known number of transactions
             //19831879,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
-            1379830,  // * total number of transactions between genesis and that timestamp
+            1446257,  // * total number of transactions between genesis and that timestamp
             0.06     // * estimated number of transactions per second after that timestamp
         };
     }

@@ -1,5 +1,6 @@
 *.tar.gz
 
+*.exe
 src/noodlyappendagecoin
 src/noodlyappendagecoind
 src/noodlyappendagecoin-cli
