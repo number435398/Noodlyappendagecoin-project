@@ -1,7 +1,7 @@
 Noodlyappendagecoin Core integration/staging tree
 =====================================
 
-Version 0.15.2
+Version 0.15.2 (Date: 11/20/2018)
 
 NDL Release v 0.15.2
 
